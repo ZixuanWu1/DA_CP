@@ -315,7 +315,7 @@ for i, (name, model) in enumerate(models.items()):
     detections[name] = detection
     detection = np.sum(detection & truth) / np.sum(truth)
     error[name] = false / 500
-    print("Type 1 error of " + name + " is " + str(false / 500))
+    print("Miscoverage of " + name + " is " + str(false / 500))
     print("Proportion of detected sentence of " + name + " is " + str(detection))
 print("point 3 ok")
 p = 5 # X1 dimension (number of words)
