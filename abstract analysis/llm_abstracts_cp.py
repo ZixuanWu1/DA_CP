@@ -1,4 +1,17 @@
 from utils import *
+from plsi import pLSI
+from quantileKernelMixCp import quikmix2
+from quantileKernelMixCp import utils
+from sklearn.model_selection import train_test_split
+from tqdm import tqdm
+import numpy as np
+
+
+from quantileKernelMixCp.utils import *
+from quantileKernelMixCp.qkm2 import qkm
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 
 def get_features(similarity_within_generation):
 
@@ -236,7 +249,7 @@ for model_idx, (name, model) in enumerate(models.items()):
             mask = pred_vals >= threshold
             if np.sum(true_vals[mask] < thre) <= 3:
                 if j == 0:
-                    c[idx] == 0
+                    c[idx] = 0
                 else:
                     c[idx] = threshold
                 break
@@ -266,7 +279,7 @@ for model_idx, (name, model) in enumerate(models.items()):
             mask = pred_vals >= threshold
             if np.sum(true_vals[mask] < thre) <= 3:
                 if j == 0:
-                    c[idx] == 0
+                    c[idx] = 0
                 else:
                     c[idx] = threshold
                 break
